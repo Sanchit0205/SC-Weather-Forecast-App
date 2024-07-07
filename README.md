@@ -23,5 +23,8 @@ Weather Forecast App
 
 ![image](https://github.com/Sanchit0205/CODTECH-Task2/assets/123823858/271d9df9-e547-492c-aa55-1631cfbfaae2)
 
+![image](https://github.com/Sanchit0205/CODTECH-Task2/assets/123823858/9701c1b6-6303-489f-869d-9dc9dcaeded3)
+
+
 
 
