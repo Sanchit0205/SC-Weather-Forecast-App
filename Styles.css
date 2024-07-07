@@ -1,0 +1,235 @@
+/* body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #7bffeb, #f7f7f7);
+    background-image: url('/Task 1/Images/360_F_839844054_loPyoL8uFyODQXcMmm2mnfGTe4jA0Moe.png');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #000000;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 55px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-box i {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    outline: none;
+    background: transparent;
+    color: #171717;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-box input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.weather-box {
+    text-align: center;
+    margin: 1px 0;
+}
+
+.weather-box img {
+    width: 40%;
+}
+
+.weather-box .temperature {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.weather-box .description {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.weather-details {
+    margin-top: 20px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.weather-details .humidity i,
+.weather-details .wind i {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.weather-details .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-details .info-humidity span,
+.weather-details .info-wind span {
+    font-size: 24px;
+    font-weight: 700;
+} */
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/Images/abstract-background-with-smooth-waves-in-shades-of-black.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #000000;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 55px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-box i {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    outline: none;
+    background: transparent;
+    color: #171717;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-box input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.search-box button {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.weather-box {
+    text-align: center;
+    margin: 1px 0;
+}
+
+.weather-box img {
+    width: 40%;
+}
+
+.weather-box .temperature {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.weather-box .description {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.weather-details {
+    margin-top: 20px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.weather-details .humidity i,
+.weather-details .wind i {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.weather-details .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-details .info-humidity span,
+.weather-details .info-wind span {
+    font-size: 24px;
+    font-weight: 700;
+}
