@@ -222,17 +222,17 @@ body {
     }
 
     .weather-box .temperature {
-        font-size: 33px;
+        font-size: 30px;
     }
 
     .weather-box .description {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .weather-details .humidity,
     .weather-details .wind {
-        flex-direction: row;
-        margin: 5px 0;
+        flex-direction: column  ;
+        margin: 3px 0;
     }
 
     .weather-details .humidity i,
