@@ -92,6 +92,9 @@ body.fade {
 .weather-box {
     text-align: center;
     margin: 1px 0;
+    display: none;  /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .weather-box img {
@@ -109,9 +112,12 @@ body.fade {
 }
 
 .weather-details {
-    display: flex;
     justify-content: center;
     gap: 25px; /* Adjust the gap as needed */
+    margin-top: 20px;
+    display: none;  /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .humidity, .wind {
@@ -140,87 +146,44 @@ body.fade {
 }
 
 
+.weather-box, .weather-details {    
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
 
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-    .container {
-        width: 75%;
-        height: 75%;
-    }
-
-    .search-box {
-        height: auto;
-        width: auto;
-    }
-
-    .search-box i {
-        margin-bottom: 10px;
-    }
-
-    .search-box input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search-box button {
-        font-size: 24px;
-    }
-
-    .weather-box img {
-        width:29%;
-    }
-
-    .weather-box .temperature {
-        font-size: 33px;
-    }
-
-    .weather-box .description {
-        font-size: 15px;
-    }
-
-    .weather-details {
-        margin-top: 18%;
-    }
-
-    .weather-details .humidity,
-    .weather-details .wind {
-        flex-direction: row;
-        margin: 5px 0;
-    }
-
-    .weather-details .humidity i,
-    .weather-details .wind i {
-        margin-bottom: 5px;
-    }
-
-    .weather-details .info-humidity span,
-    .weather-details .info-wind span {
-        font-size: 20px;
-    }
+.weather-box.visible, .weather-details.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 
 
 
-@media (max-width: 500px) {
+
+
+
+
+
+
+
+
+
+
+
+/* Styles for screens up to 768px */
+@media (max-width: 768px) {
     .container {
-        width: 75%;
-        height: 75%;
+        width: 75%;  /* Adjusted width for better fit */
+        height: auto; /* Adjusted height to auto */
     }
 
     .search-box {
-        height: auto;
         width: auto;
+        height: auto;
     }
 
     .search-box i {
+        font-size: 24px; /* Adjusted size for better appearance */
         margin-bottom: 10px;
     }
 
@@ -234,34 +197,89 @@ body.fade {
     }
 
     .weather-box img {
-        width:45%;
+        width: 35%;  /* Adjusted width for better fit */
     }
 
     .weather-box .temperature {
-        font-size: 35px;
+        font-size: 30px; /* Adjusted size for better appearance */
     }
 
     .weather-box .description {
-        font-size: 19px;
-    }
-
-    .weather-details {
-        margin-top: 22%;
+        font-size: 16px; /* Adjusted size for better appearance */
     }
 
     .weather-details .humidity,
     .weather-details .wind {
-        flex-direction: row  ;
-        margin: 15px 0;
+        flex-direction: column; /* Changed to column for better mobile layout */
+        margin: 10px 0;
+        align-items: center; /* Center items in mobile view */
     }
 
     .weather-details .humidity i,
     .weather-details .wind i {
-        margin-bottom: 15px;
+        font-size: 28px; /* Adjusted size for better appearance */
+        margin-bottom: 5px;
     }
 
     .weather-details .info-humidity span,
     .weather-details .info-wind span {
-        font-size: 20px;
+        font-size: 22px; /* Adjusted size for better appearance */
+    }
+}
+
+/* Styles for screens up to 500px */
+@media (max-width: 500px) {
+    .container {
+        width: 76%;  /* Adjusted width for better fit */
+        height: auto; /* Adjusted height to auto */
+    }
+
+    .search-box {
+        width: auto;
+        height: auto;
+    }
+
+    .search-box i {
+        font-size: 20px; /* Adjusted size for better appearance */
+        margin-bottom: 10px;
+    }
+
+    .search-box input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-box button {
+        font-size: 20px; /* Adjusted size for better appearance */
+    }
+
+    .weather-box img {
+        width: 50%;  /* Adjusted width for better fit */
+    }
+
+    .weather-box .temperature {
+        font-size: 28px; /* Adjusted size for better appearance */
+    }
+
+    .weather-box .description {
+        font-size: 18px; /* Adjusted size for better appearance */
+    }
+
+    .weather-details .humidity,
+    .weather-details .wind {
+        flex-direction: column; /* Column layout for small screens */
+        margin: 10px 0;
+        align-items: center; /* Center items in mobile view */
+    }
+
+    .weather-details .humidity i,
+    .weather-details .wind i {
+        font-size: 24px; /* Adjusted size for better appearance */
+        margin-bottom: 5px;
+    }
+
+    .weather-details .info-humidity span,
+    .weather-details .info-wind span {
+        font-size: 18px; /* Adjusted size for better appearance */
     }
 }

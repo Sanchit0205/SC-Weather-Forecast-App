@@ -1,21 +1,33 @@
-
 const container = document.querySelector('.container');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const cityInput = document.querySelector('.search-box input');
 
-
-
 search.addEventListener('click', () => {
     const APIKey = '98740f4ebc0d63bc0f8ba70090e5a091';
-    const city = document.querySelector('.search-box input').value;
-    
-    if (city === '') return;
+    const city = cityInput.value;
+
+    if (city === '') {
+        // Hide weather data if the city is empty
+        weatherBox.style.opacity = 0;
+        weatherDetails.style.opacity = 0;
+        
+        setTimeout(() => {
+            weatherBox.style.display = 'none';
+            weatherDetails.style.display = 'none';
+        }, 300);
+
+        return;
+    }
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`)
         .then(response => response.json())
         .then(json => {
+            if (json.cod === "404") {
+                throw new Error('Invalid city name');
+            }
+
             const image = document.querySelector('.weather-box img');
             const temperature = document.querySelector('.weather-box .temperature');
             const description = document.querySelector('.weather-box .description');
@@ -25,7 +37,7 @@ search.addEventListener('click', () => {
             switch (json.weather[0].main) {
                 case 'Clear':
                     image.src = '/Images/clear.png';
-                    document.body.style.backgroundImage = "url('/Images/background1.jpg'')";
+                    document.body.style.backgroundImage = "url('/Images/background1.jpg')";
                     break;
                 case 'Rain':
                     image.src = '/Images/rain.png';
@@ -42,12 +54,11 @@ search.addEventListener('click', () => {
                 case 'Haze':
                     image.src = '/Images/Haze.png';
                     document.body.style.backgroundImage = "url('/Images/Haze.jpg')";
-                    break; 
+                    break;
                 case 'Mist':
                     image.src = '/Images/mist.png';
                     document.body.style.backgroundImage = "url('/Images/mist.jpg')";
-                    break;      
-
+                    break;
                 default:
                     image.src = '/Images/clear.png';
                     document.body.style.backgroundImage = "url('/Images/background1.png')";
@@ -58,15 +69,56 @@ search.addEventListener('click', () => {
             description.innerHTML = `${json.weather[0].description}`;
             humidity.innerHTML = `${json.main.humidity}%`;
             wind.innerHTML = `${json.wind.speed} Km/h`;
+
+            // Remove error message if present
+            const errorMessage = document.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+
+            // Display weather data with smooth transition
+            weatherBox.style.display = 'block';
+            weatherBox.style.opacity = 1;
+            weatherDetails.style.display = 'flex';
+            weatherDetails.style.opacity = 1;
         })
-        .catch(error => alert('Error fetching weather data: ' + error));
+        .catch(error => {
+            // Hide weather data with smooth transition
+            weatherBox.style.opacity = 0;
+            weatherDetails.style.opacity = 0;
 
+            // Wait for the transition to complete before setting display to 'none'
+            setTimeout(() => {
+                weatherBox.style.display = 'none';
+                weatherDetails.style.display = 'none';
+            }, 300);
 
+            // Display error message
+            let errorMessage = document.querySelector('.error-message');
+            if (!errorMessage) {
+                errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.style.color = 'red';
+                errorMessage.style.marginTop = '10px';
+                container.appendChild(errorMessage);
+            }
+            errorMessage.textContent = error.message;
+        });
 });
-
 
 cityInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        search.click();
+        if (cityInput.value === '') {
+            // Hide weather data if the city is empty
+            weatherBox.style.opacity = 0;
+            weatherDetails.style.opacity = 0;
+            
+            setTimeout(() => {
+                weatherBox.style.display = 'none';
+                weatherDetails.style.display = 'none';
+            }, 300);
+        } else {
+            search.click();
+        }
     }
-}); 
+});
