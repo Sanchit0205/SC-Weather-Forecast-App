@@ -2,8 +2,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    /* background-image: url('/Images/abstract-background-with-smooth-waves-in-shades-of-black.png'); */
-    background: linear-gradient(135deg, #ffd53cd5, #ccf46f);
+    background-image: url('/Images/pngtree-colorful-auspicious-clouds-colorful-clouds-cartoon-illustration-sky-cute-background-image_2204270.jpg');
+    /* background: linear-gradient(135deg, #c6c6c6d5, #9a9a9a); */
  
     background-size: cover;
     background-position: center;
@@ -14,8 +14,14 @@ body {
     align-items: center;
     height: 100vh;
     color: #000000;
+    transition: background-image 0.4s ease-in-out;
 }
 
+
+body.fade {
+    opacity: 0.5;
+    transition: opacity 0.4s ease-in-out;
+}   
 
 .container {
     text-align: center;
@@ -89,7 +95,7 @@ body {
 }
 
 .weather-box img {
-    width: 40%;
+    width: 36%;
 }
 
 .weather-box .temperature {
@@ -103,15 +109,16 @@ body {
 }
 
 .weather-details {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Adjust the gap as needed */
 }
 
-.weather-details .humidity,
-.weather-details .wind {
+.humidity, .wind {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
+    padding: 0px 10px; /* Adjust the padding as needed */
 }
 
 .weather-details .humidity i,
@@ -131,6 +138,7 @@ body {
     font-size: 24px;
     font-weight: 700;
 }
+
 
 
 
@@ -175,6 +183,10 @@ body {
 
     .weather-box .description {
         font-size: 15px;
+    }
+
+    .weather-details {
+        margin-top: 18%;
     }
 
     .weather-details .humidity,
@@ -233,6 +245,10 @@ body {
         font-size: 19px;
     }
 
+    .weather-details {
+        margin-top: 22%;
+    }
+
     .weather-details .humidity,
     .weather-details .wind {
         flex-direction: row  ;
@@ -247,6 +263,5 @@ body {
     .weather-details .info-humidity span,
     .weather-details .info-wind span {
         font-size: 20px;
-        margin-top: 20%;
     }
 }

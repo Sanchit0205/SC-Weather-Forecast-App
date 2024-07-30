@@ -25,7 +25,7 @@ search.addEventListener('click', () => {
             switch (json.weather[0].main) {
                 case 'Clear':
                     image.src = '/Images/clear.png';
-                    document.body.style.backgroundImage = "url('/Images/240_F_823017121_nb9kE9UxuLNwvaZfrQKFMg8WexcJ1oJm.jpg')";
+                    document.body.style.backgroundImage = "url('/Images/background1.jpg'')";
                     break;
                 case 'Rain':
                     image.src = '/Images/rain.png';
@@ -50,7 +50,7 @@ search.addEventListener('click', () => {
 
                 default:
                     image.src = '/Images/clear.png';
-                    document.body.style.backgroundImage = "url('/Images/abstract-background-with-smooth-waves-in-shades-of-black.png')";
+                    document.body.style.backgroundImage = "url('/Images/background1.png')";
                     break;
             }
 
