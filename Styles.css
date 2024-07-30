@@ -3,7 +3,7 @@
 body {
     font-family: 'Arial', sans-serif;
     /* background-image: url('/Images/abstract-background-with-smooth-waves-in-shades-of-black.png'); */
-    background: linear-gradient(135deg, #ffd53c, #fff2b7);
+    background: linear-gradient(135deg, #ffd53cd5, #ccf46f);
  
     background-size: cover;
     background-position: center;
@@ -57,13 +57,17 @@ body {
 .search-box input {
     padding: 10px;
     width: 250px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.279);
     border-radius: 25px;
     outline: none;
     background: transparent;
     color: #171717;
     font-size: 18px;
     transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-box input::placeholder {
+    color: #4545453f;
 }
 
 .search-box input:focus {
@@ -218,30 +222,31 @@ body {
     }
 
     .weather-box img {
-        width:29%;
+        width:45%;
     }
 
     .weather-box .temperature {
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .weather-box .description {
-        font-size: 13px;
+        font-size: 19px;
     }
 
     .weather-details .humidity,
     .weather-details .wind {
-        flex-direction: column  ;
-        margin: 3px 0;
+        flex-direction: row  ;
+        margin: 15px 0;
     }
 
     .weather-details .humidity i,
     .weather-details .wind i {
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
 
     .weather-details .info-humidity span,
     .weather-details .info-wind span {
         font-size: 20px;
+        margin-top: 20%;
     }
 }
