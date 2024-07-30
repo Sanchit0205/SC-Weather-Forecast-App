@@ -4,20 +4,46 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const cityInput = document.querySelector('.search-box input');
 
+
+// Preload images
+const preloadImages = () => {
+    const imageUrls = [
+        '/Images/clear.png',
+        '/Images/rain.png',
+        '/Images/snow.png',
+        '/Images/cloud.png',
+        '/Images/Haze.png',
+        '/Images/mist.png',
+        '/Images/thunderstorm.png', 
+        '/Images/background1.jpg',
+        '/Images/rain.jpg',
+        '/Images/snow.jpg',
+        '/Images/240_F_747169629_Z51nHt57EndryEjdLgDTCAqDziyrQrna.jpg',
+        '/Images/Haze.jpg',
+        '/Images/mist.jpg',
+        '/Images/thunderstorm.jpg'
+    ];
+
+    imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+};
+
+// Call the preload function
+preloadImages();
+
 search.addEventListener('click', () => {
     const APIKey = '98740f4ebc0d63bc0f8ba70090e5a091';
-    const city = cityInput.value;
+    const city = document.querySelector('.search-box input').value;
 
     if (city === '') {
-        // Hide weather data if the city is empty
         weatherBox.style.opacity = 0;
         weatherDetails.style.opacity = 0;
-        
         setTimeout(() => {
             weatherBox.style.display = 'none';
             weatherDetails.style.display = 'none';
         }, 300);
-
         return;
     }
 
@@ -58,6 +84,10 @@ search.addEventListener('click', () => {
                 case 'Mist':
                     image.src = '/Images/mist.png';
                     document.body.style.backgroundImage = "url('/Images/mist.jpg')";
+                    break;
+                case 'Thunderstorm':
+                    image.src = '/Images/thunderstorm.png';
+                    document.body.style.backgroundImage = "url('/Images/thunderstorm.jpg')";
                     break;
                 default:
                     image.src = '/Images/clear.png';
@@ -108,17 +138,6 @@ search.addEventListener('click', () => {
 
 cityInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        if (cityInput.value === '') {
-            // Hide weather data if the city is empty
-            weatherBox.style.opacity = 0;
-            weatherDetails.style.opacity = 0;
-            
-            setTimeout(() => {
-                weatherBox.style.display = 'none';
-                weatherDetails.style.display = 'none';
-            }, 300);
-        } else {
-            search.click();
-        }
+        search.click();
     }
 });

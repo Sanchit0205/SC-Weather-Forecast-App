@@ -1,10 +1,7 @@
-
-
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('/Images/pngtree-colorful-auspicious-clouds-colorful-clouds-cartoon-illustration-sky-cute-background-image_2204270.jpg');
     /* background: linear-gradient(135deg, #c6c6c6d5, #9a9a9a); */
- 
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -173,6 +170,7 @@ body.fade {
 /* Styles for screens up to 768px */
 @media (max-width: 768px) {
     .container {
+        margin-top: 0%;
         width: 75%;  /* Adjusted width for better fit */
         height: auto; /* Adjusted height to auto */
     }
@@ -230,6 +228,7 @@ body.fade {
 /* Styles for screens up to 500px */
 @media (max-width: 500px) {
     .container {
+        margin-top: 0%;
         width: 76%;  /* Adjusted width for better fit */
         height: auto; /* Adjusted height to auto */
     }
