@@ -70,7 +70,7 @@ body.fade {
 }
 
 .search-box input::placeholder {
-    color: #4545453f;
+    color: #393939be;
 }
 
 .search-box input:focus {
